@@ -1,0 +1,10 @@
+.forecast-container {
+  box-shadow: 4px 3px 8px 2px #969696;
+  justify-content: center;
+  background-color: whitesmoke;
+  padding-left: 30%;
+}
+
+.forecastWeather-title h3 {
+  margin-left: 25%;
+}
