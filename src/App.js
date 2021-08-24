@@ -14,19 +14,34 @@ class App extends Component {
   // componentDidMount() {
   //   this.setState({ weather: data });
   // }
-  // componentDidMount() {
-  //   axios
-  //     .get(
-  //       `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${this.state.cityName}&aqi=no`
-  //     )
-  //     .then((res) => {
-  //       const weather = res.data;
-  //       this.setState({ weather: weather });
-  //     });
-  // }
+  componentDidMount() {
+    axios
+      .get(
+        `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=pawtucket&aqi=no`
+      )
+      .then((res) => {
+        const weather = res.data;
+        this.setState({ weather: weather });
+      });
+  }
+
+  componentDidUpdate() {
+    if (this.state.cityName != "") {
+      axios
+        .get(
+          `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${this.state.cityName}&aqi=no`
+        )
+        .then((res) => {
+          const weather = res.data;
+          this.setState({ weather: weather });
+        });
+    }
+  }
 
   setCityName = (searchBarResults) => {
+    console.log(searchBarResults);
     this.setState({ cityName: searchBarResults });
+    console.log(this.state.cityName);
   };
 
   render() {

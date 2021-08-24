@@ -7,7 +7,9 @@ const Searchbar = (props) => {
     setCity(e.target.value);
   };
 
-  const submit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(city);
     props.setCityName(city);
   };
   return (
@@ -18,8 +20,10 @@ const Searchbar = (props) => {
           <div className="col-8">
             <div>
               <h4>Enter the name of your city</h4>
-              <input type="text" name="" id="" onChange={setCityName} />
-              <input type="submit" name="" id="" onSubmit={submit} />
+              <form action="" onSubmit={handleSubmit}>
+                <input type="text" name="" id="" onChange={setCityName} />
+                <input type="submit" name="" id="" />
+              </form>
             </div>
           </div>
           <div className="col"></div>
