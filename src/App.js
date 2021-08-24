@@ -13,42 +13,33 @@ class App extends Component {
   state = {
     cityName: "",
   };
-  componentDidMount() {
-    this.setState({ weather: data });
-    this.setState({ forecastWeatherData: forecastWeatherData });
-  }
   // componentDidMount() {
-  //   axios
-  //     .get(
-  //       `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=pawtucket&aqi=no`
-  //     )
-  //     .then((res) => {
-  //       const weather = res.data;
-  //       this.setState({ weather: weather });
-  //     });
+  //   this.setState({ weather: data });
+  //   this.setState({ forecastWeatherData: forecastWeatherData });
   // }
-
-  // componentDidUpdate() {
-  //   if (this.state.cityName != "") {
-  //     axios
-  //       .get(
-  //         `http://api.weatherapi.com/v1/current.json?key=${APIKEY}&q=${this.state.cityName}&aqi=no`
-  //       )
-  //       .then((res) => {
-  //         const weather = res.data;
-  //         this.setState({ weather: weather });
-  //       });
-  //   }
-  // }
+  componentDidMount() {
+    axios
+    .get(`http://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=pawtucket&days=6&aqi=no&alerts=no`)
+    .then((res)=>{
+      const forecastWeather = res.data
+      this.setState({forecastWeatherData: forecastWeather})
+    });
+  }
 
   setCityName = (searchBarResults) => {
-    console.log(searchBarResults);
-    this.setState({ cityName: searchBarResults });
-    console.log(this.state.cityName);
+    axios
+    .get(
+      `http://api.weatherapi.com/v1/forecast.json?key=${APIKEY}&q=${searchBarResults}&days=6&aqi=no&alerts=no`
+    )
+    .then((res)=>{
+      const forecastWeather = res.data
+      this.setState({forecastWeatherData: forecastWeather})
+      console.log(this.state.forecastWeatherData)
+    });
   };
 
   render() {
-    if (this.state.weather === undefined) {
+    if (this.state.forecastWeatherData === undefined) {
       return (
         <div>
           <Searchbar />
@@ -63,7 +54,7 @@ class App extends Component {
               <div className="col-8">
                 <Title />
                 <Searchbar setCityName={this.setCityName} />
-                <CurrentWeather currentWeather={this.state.weather} />
+                <CurrentWeather currentWeather={this.state.forecastWeatherData.current} currentLocation={this.state.forecastWeatherData.location}/>
                 <ForecastWeather
                   forecastWeather={this.state.forecastWeatherData}
                 />

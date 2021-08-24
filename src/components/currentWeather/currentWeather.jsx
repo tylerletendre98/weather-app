@@ -1,5 +1,6 @@
 import "./currentWeather.css";
 const CurrentWeather = (props) => {
+  console.log(props);
   return (
     <div>
       <div className="container">
@@ -10,19 +11,18 @@ const CurrentWeather = (props) => {
               <div className="weather-containter">
                 <div className="location">
                   <h3>
-                    {props.currentWeather.location.name},
-                    {props.currentWeather.location.region}
+                    {props.currentLocation.name},{props.currentLocation.region}
                   </h3>
                 </div>
                 <div className="location-conditions">
                   <p>
-                    Sky Condition: {props.currentWeather.current.condition.text}
-                    <img src={props.currentWeather.current.condition.icon} />
+                    Sky Condition: {props.currentWeather.condition.text}
+                    <img src={props.currentWeather.condition.icon} />
                   </p>
-                  <p>Temperature: {props.currentWeather.current.temp_f}</p>
-                  <p>Heat Index: {props.currentWeather.current.feelslike_f}</p>
-                  <p>Winds: {props.currentWeather.current.wind_mph}</p>
-                  <p>Wind direction: {props.currentWeather.current.wind_dir}</p>
+                  <p>Temperature: {props.currentWeather.temp_f}</p>
+                  <p>Heat Index: {props.currentWeather.feelslike_f}</p>
+                  <p>Winds: {props.currentWeather.wind_mph}</p>
+                  <p>Wind direction: {props.currentWeather.cwind_dir}</p>
                 </div>
               </div>
             </div>
