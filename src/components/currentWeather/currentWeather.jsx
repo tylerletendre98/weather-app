@@ -17,7 +17,7 @@ const CurrentWeather = (props) => {
                 <div className="location-conditions">
                   <p>
                     Sky Condition: {props.currentWeather.current.condition.text}
-                    <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" />
+                    <img src={props.currentWeather.current.condition.icon} />
                   </p>
                   <p>Temperature: {props.currentWeather.current.temp_f}</p>
                   <p>Heat Index: {props.currentWeather.current.feelslike_f}</p>
