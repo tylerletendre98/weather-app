@@ -1,3 +1,4 @@
+import "./searchBar.css";
 import { useState } from "react";
 
 const Searchbar = (props) => {
@@ -21,7 +22,13 @@ const Searchbar = (props) => {
             <div>
               <h4>Enter the name of your city</h4>
               <form action="" onSubmit={handleSubmit}>
-                <input type="text" name="" id="" onChange={setCityName} />
+                <input
+                  type="text"
+                  name=""
+                  id="searchBoxText"
+                  onChange={setCityName}
+                  placeholder="Please enter the name of your city"
+                />
                 <input type="submit" name="" id="" />
               </form>
             </div>
