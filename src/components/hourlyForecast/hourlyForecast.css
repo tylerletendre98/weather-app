@@ -1,0 +1,9 @@
+.hour-container {
+  background-color: whitesmoke;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+  margin-top: 10px;
+  padding-left: 15%;
+  box-shadow: 4px 3px 8px 2px #969696;
+}

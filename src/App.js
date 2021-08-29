@@ -53,7 +53,12 @@ class App extends Component {
             <div className="row">
               <div className="col-2">
                 <div>
-                  <HourlyForecast />
+                  <HourlyForecast
+                    hourlyForecast={
+                      this.state.forecastWeatherData.forecast.forecastday[0]
+                        .hour
+                    }
+                  />
                 </div>
               </div>
               <div className="col-8">
