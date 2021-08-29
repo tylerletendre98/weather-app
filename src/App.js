@@ -49,6 +49,9 @@ class App extends Component {
     } else {
       return (
         <div className="App">
+          <div>
+            <Title />
+          </div>
           <div className="container">
             <div className="row">
               <div className="col-2">
@@ -62,7 +65,6 @@ class App extends Component {
                 </div>
               </div>
               <div className="col-8">
-                <Title />
                 <Searchbar setCityName={this.setCityName} />
                 <CurrentWeather
                   currentWeather={this.state.forecastWeatherData.current}

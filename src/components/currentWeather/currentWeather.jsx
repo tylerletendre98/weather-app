@@ -5,7 +5,7 @@ const CurrentWeather = (props) => {
     <div>
       <div className="container">
         <div className="row">
-          <div className="col-4"></div>
+          <div className="col-3"></div>
           <div className="col-8">
             <div className="weather-containter">
               <div className="location">

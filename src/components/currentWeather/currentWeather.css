@@ -4,4 +4,15 @@
   margin-right: 15%;
   background-color: whitesmoke;
   padding-right: 15%;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.location {
+  padding-left: 15%;
+}
+
+.location-conditions {
+  padding-left: 15%;
 }

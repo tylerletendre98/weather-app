@@ -3,12 +3,15 @@ import "./hourlyForecast.css";
 const HourlyForecast = (props) => {
   return (
     <div>
+      <div className="hourly-forecast-title">
+        <h3>Hourly Forecast</h3>
+      </div>
       {props.hourlyForecast.map((hour) => {
         return (
           <div>
             <div className="hourly-conditions-container">
               <div className="hour-container">
-                <p>{hour.time}</p>
+                <h4>{hour.time}</h4>
                 <p>
                   Sky Condition: {hour.condition.text}
                   <img src={hour.condition.icon} />

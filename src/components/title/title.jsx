@@ -4,7 +4,7 @@ const Title = () => {
   return (
     <header>
       <div className="title-header">
-        <h1>Weather App</h1>
+        <h1>Local Weather Service</h1>
       </div>
     </header>
   );
