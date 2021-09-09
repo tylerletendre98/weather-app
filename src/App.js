@@ -77,7 +77,7 @@ class App extends Component {
               </div>
               <div className="col-2">
                 <div>
-                  <MoonPhase/>
+                  <MoonPhase moonInfo={this.state.forecastWeatherData.forecast.forecastday[0].astro}/>
                 </div>
               </div>
             </div>
