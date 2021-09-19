@@ -65,7 +65,7 @@ class App extends Component {
                   />
                 </div>
               </div>
-              <div className="col-8">
+              <div className="col-7">
                 <Searchbar setCityName={this.setCityName} />
                 <CurrentWeather
                   currentWeather={this.state.forecastWeatherData.current}
@@ -75,7 +75,7 @@ class App extends Component {
                   forecastWeather={this.state.forecastWeatherData}
                 />
               </div>
-              <div className="col-2">
+              <div className="col-3">
                 <div>
                   <MoonPhase moonInfo={this.state.forecastWeatherData.forecast.forecastday[0].astro}/>
                 </div>
